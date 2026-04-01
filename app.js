@@ -11,13 +11,18 @@ import http from "http";
 import cors from "cors";
 import { initSocket } from "./socket/server.js";
 
+import dns from "dns"
+
+dns.setServers(["1.1.1.1", "8.8.8.8"])
+
 const app = express();
+app.set("trust proxy", 1);
 
 const server = http.createServer(app);
 
 // Middlewares
 app.use(cors({
-  origin: ["http://192.168.1.71:5173", "http://192.168.1.71:5174"],
+  origin: ["http://192.168.1.67:5173", "http://192.168.1.71:5175"],
   credentials: true
 }));
 
@@ -46,7 +51,7 @@ createAdmin();
 // 🔥 Socket Initialize
 initSocket(server);
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8000;
 
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 Server is Running on http://0.0.0.0:${PORT}`);
