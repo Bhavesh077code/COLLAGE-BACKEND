@@ -22,7 +22,7 @@ const server = http.createServer(app);
 
 // Middlewares
 app.use(cors({
-  origin:"frontend-colage-event-management.vercel.app ",
+  origin:" https://frontend-colage-event-management-btjz49l7x.vercel.app",
   credentials: true
 }));
 
