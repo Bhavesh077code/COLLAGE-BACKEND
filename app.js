@@ -22,7 +22,7 @@ const server = http.createServer(app);
 
 // Middlewares
 app.use(cors({
-  origin: ["http://192.168.1.67:5173", "http://192.168.1.71:5175"],
+  origin:"frontend-colage-event-management.vercel.app ",
   credentials: true
 }));
 
