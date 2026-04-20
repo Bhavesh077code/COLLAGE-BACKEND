@@ -11,8 +11,8 @@ import http from "http";
 import cors from "cors";
 import { initSocket } from "./socket/server.js";
 
+//MONGODB DNS ISSUE FIX
 import dns from "dns"
-
 dns.setServers(["1.1.1.1", "8.8.8.8"])
 
 const app = express();
